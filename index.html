@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yılmaz Games</title>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+
+header{
+    background:#222;
+    padding:30px;
+}
+
+h1{
+    font-size:60px;
+}
+
+.games{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:#333;
+    width:280px;
+    padding:20px;
+    border-radius:15px;
+}
+
+button{
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#00aaff;
+    color:white;
+}
+
+button:hover{
+    background:#0088cc;
+}
+
+#sonuc{
+    margin-top:20px;
+    font-size:25px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>🎮 Yılmaz Games</h1>
+<p>Ücretsiz Oyun Platformu</p>
+</header>
+
+<div class="games">
+
+<div class="card">
+<h2>🏰 Kale Savaşı</h2>
+<p>Kaleye saldır!</p>
+<button onclick="kale()">Oyna</button>
+</div>
+
+<div class="card">
+<h2>🚗 Araba Yarışı</h2>
+<p>Yarış yap ve puan kazan!</p>
+<button onclick="araba()">Oyna</button>
+</div>
+
+<div class="card">
+<h2>🧟 Zombi Avı</h2>
+<p>Zombileri yok et!</p>
+<button onclick="zombi()">Oyna</button>
+</div>
+
+</div>
+
+<div id="sonuc"></div>
+
+<script>
+
+function araba(){
+let puan = Math.floor(Math.random()*1000);
+document.getElementById("sonuc").innerHTML =
+"🏎️ Yarış bitti! Puanın: " + puan;
+}
+
+function zombi(){
+let sans = Math.random();
+
+if(sans > 0.5){
+document.getElementById("sonuc").innerHTML =
+"🧟 Kazandın! Tüm zombiler yok edildi!";
+}else{
+document.getElementById("sonuc").innerHTML =
+"☠️ Kaybettin! Zombiler seni yakaladı!";
+}
+}
+
+function kale(){
+let hasar = Math.floor(Math.random()*500);
+
+document.getElementById("sonuc").innerHTML =
+"🏰 Kaleye " + hasar + " hasar verdin!";
+}
+
+</script>
+
+</body>
+</html>
